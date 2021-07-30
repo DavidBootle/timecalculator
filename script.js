@@ -40,7 +40,68 @@ function newInputRow(focus = false) {
     </div>
     `);
 
+    // keypress handler for the hours input
+    $(`#hours${rowId}`).keypress(function (e) {
+
+        const key = e.key;
+
+        // cancels the input if the input is not a digit
+        if (!/\d/.test(key)) {
+            return false;
+        }
+
+        const val = $(this).val() + key;
+
+        if ( val.length > 2 ) {
+            return false;
+        }
+    })
+
+    // keypress handler for the minutes input
+    $(`#minutes${rowId}`).keypress(function (e) {
+
+        const key = e.key;
+
+        // cancels the input if the input is not a digit
+        if (!/\d/.test(key)) {
+            return false;
+        }
+
+        const val = $(this).val() + key;
+        const valNum = parseInt(val);
+
+        if (valNum > 60) {
+            return false;
+        }
+
+        if ( val.length > 2 ) {
+            return false;
+        }
+    })
+
     // keypress handler for the seconds input
+    $(`#seconds${rowId}`).keypress(function (e) {
+
+        const key = e.key;
+
+        // cancels the input if the input is not a digit
+        if (!/\d/.test(key)) {
+            return false;
+        }
+
+        const val = $(this).val() + key;
+        const valNum = parseInt(val);
+
+        if (valNum > 60) {
+            return false;
+        }
+
+        if (val.length > 2) {
+            return false;
+        }
+    })
+
+    // keydown handler for the seconds input
     $(`#seconds${rowId}`).keydown(function (e) { 
         
         if (e.key == 'Tab') {
