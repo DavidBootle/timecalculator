@@ -20,8 +20,9 @@ function setTotal(hours, minutes, seconds) {
 
 /**
  * Adds a new input row.
+ * @param {bool} focus - Whether to focus on the first element of the new row.
  */
-function newInputRow() {
+function newInputRow(focus = false) {
     var numOfChildren = $('#inputForm').children().length;
     const rowId = numOfChildren - 1;
 
@@ -38,4 +39,20 @@ function newInputRow() {
         </div>
     </div>
     `);
+
+    // keypress handler for the seconds input
+    $(`#seconds${rowId}`).keydown(function (e) { 
+        
+        if (e.key == 'Tab') {
+
+            // checks to see if the row is the last row or not
+            if($(this).parent().parent().is(':last-child')) {
+                newInputRow();
+            }
+        }
+    });
+
+    if (focus) {
+        $(`#hours${rowId}`).focus();
+    }
 }
