@@ -117,3 +117,36 @@ function newInputRow(focus = false) {
         $(`#hours${rowId}`).focus();
     }
 }
+
+/**
+ * Gets the integer value of a input on the webpage.
+ * @param {int} column - Specifies whether the input is hours, minutes, or seconds. 0 for hours, 1 for minutes, 2 for seconds.
+ * @param {int} row - Specifies the row the input is on.
+ * @returns {int} - The value of the input. 0 if the input is empty.
+ */
+function getValue(column, row) {
+
+    var columnName;
+    switch (column) {
+        case 0:
+            columnName = 'hours';
+            break;
+        case 1:
+            columnName = 'minutes';
+            break;
+        case 2:
+            columnName = 'seconds';
+            break;
+        default:
+            console.log('Not a valid column number.');
+            return null;
+    }
+
+    const val = $(`#${columnName}${row}`).val();
+
+    if (val.length == 0) {
+        return 0;
+    }
+
+    return parseInt(val);
+}
