@@ -29,13 +29,13 @@ function newInputRow(focus = false) {
     $('#inputForm').append(`
     <div class="row mb-2">
         <div class="col">
-            <input type="number" class="form-control font-monospace text-center hours-input" id="hours${rowId}" placeholder="00" min=0 />
+            <input type="number" class="form-control font-monospace text-center hours-input" id="hours${rowId}" placeholder="00" min=0 oninput="calculateTotal()"/>
         </div>
         <div class="col">
-            <input type="number" class="form-control font-monospace text-center minutes-input" id="minutes${rowId}" placeholder="00" min=0 max=60 />
+            <input type="number" class="form-control font-monospace text-center minutes-input" id="minutes${rowId}" placeholder="00" min=0 max=60 oninput="calculateTotal()"/>
         </div>
         <div class="col">
-            <input type="number" class="form-control font-monospace text-center seconds-input" id="seconds${rowId}" placeholder="00" min=0 max=60 />
+            <input type="number" class="form-control font-monospace text-center seconds-input" id="seconds${rowId}" placeholder="00" min=0 max=60 oninput="calculateTotal()"/>
         </div>
     </div>
     `);
@@ -166,4 +166,28 @@ function getColumnSum(column) {
     }
 
     return sum;
+}
+
+/**
+ * Calculates the total number of hours, minutes, and seconds, and sets the total display accordingly.
+ */
+function calculateTotal() {
+
+    const combinedHours = getColumnSum(0);
+    const combinedMinutes = getColumnSum(1);
+    const combinedSeconds = getColumnSum(2);
+
+    let seconds = combinedSeconds + (combinedMinutes * 60) + (combinedHours * 60 * 60);
+
+    var finalHours, finalMinutes, finalSeconds;
+
+    finalHours = Math.floor(seconds / 60 / 60);
+    seconds -= finalHours * 60 * 60;
+
+    finalMinutes = Math.floor(seconds / 60);
+    seconds -= finalMinutes * 60;
+
+    finalSeconds = seconds;
+
+    setTotal(finalHours, finalMinutes, finalSeconds);
 }
