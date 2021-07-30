@@ -43,7 +43,7 @@
         </div>
 
         <div class="mt-4">
-            <form>
+            <form id="inputForm">
                 <div class="row">
                     <div class="col">
                         <label class="form-label">Hours</label>
@@ -55,20 +55,9 @@
                         <label class="form-label">Seconds</label>
                     </div>
                 </div>
-                <div class="row mb-2">
-                    <div class="col">
-                        <input type="number" class="form-control font-monospace text-center hours-input" id="hours" placeholder="00" min=0 />
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control font-monospace text-center minutes-input" id="minutes" placeholder="00" min=0 max=60 />
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control font-monospace text-center seconds-input" id="seconds" placeholder="00" min=0 max=60 />
-                    </div>
-                </div>
             </form>
 
-            <button id="addButton" class="add-button mt-4" tabindex="0" >+</button>
+            <button id="addButton" class="add-button mt-4" tabindex="0" onclick="newInputRow()">+</button>
         </div>
     </div>
 
@@ -77,5 +66,7 @@
             <span class="text-muted">© 2021 <b>David Bootle</b></span>
         </div>
     </footer>
+
+    <script type="text/javascript">newInputRow()</script>
 </body>
 </html>

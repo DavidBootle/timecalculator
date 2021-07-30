@@ -17,3 +17,25 @@ function setTotal(hours, minutes, seconds) {
 
     $('#totalDisplay').text(totalString);
 }
+
+/**
+ * Adds a new input row.
+ */
+function newInputRow() {
+    var numOfChildren = $('#inputForm').children().length;
+    const rowId = numOfChildren - 1;
+
+    $('#inputForm').append(`
+    <div class="row mb-2">
+        <div class="col">
+            <input type="number" class="form-control font-monospace text-center hours-input" id="hours${rowId}" placeholder="00" min=0 />
+        </div>
+        <div class="col">
+            <input type="number" class="form-control font-monospace text-center minutes-input" id="minutes${rowId}" placeholder="00" min=0 max=60 />
+        </div>
+        <div class="col">
+            <input type="number" class="form-control font-monospace text-center seconds-input" id="seconds${rowId}" placeholder="00" min=0 max=60 />
+        </div>
+    </div>
+    `);
+}
