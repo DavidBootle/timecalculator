@@ -31,7 +31,46 @@
     </nav>
 
     <!-- Page Body -->
-    <h1>Hello World!</h1>
+    <div class="container text-center mt-2">
+        <h1 class="display-4">Instructions</h1>
+        <p class="lead">
+            Add time durations below to automatically calculate the total time.
+        </p>
+        <div class="card">
+            <div class="my-2">
+                <span class="lead">Total:</span> <br> <span class="lead font-monospace" id="totalDisplay">00:00:00</span>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label">Hours</label>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Minutes</label>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Seconds</label>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col">
+                        <input type="number" class="form-control font-monospace text-center hours-input" id="hours" placeholder="00" min=0 />
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control font-monospace text-center minutes-input" id="minutes" placeholder="00" min=0 max=60 />
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control font-monospace text-center seconds-input" id="seconds" placeholder="00" min=0 max=60 />
+                    </div>
+                </div>
+            </form>
+
+            <button id="addButton" class="add-button mt-4" tabindex="0" >+</button>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container text-center">
