@@ -15,7 +15,13 @@ function setTotal(hours, minutes, seconds) {
 
     let totalString = `${hoursString}:${minutesString}:${secondsString}`;
 
+    let decimalHours = hours + (minutes / 60) + (seconds / 60 / 60);
+    let decimalHoursString = decimalHours.toFixed(2);
+
+    var hourString = decimalHoursString == "1.00" ? 'hour' : 'hours';
+
     $('#totalDisplay').text(totalString);
+    $('#totalDecimalDisplay').text(`${decimalHoursString} ${hourString}`);
 }
 
 /**
