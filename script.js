@@ -150,3 +150,20 @@ function getValue(column, row) {
 
     return parseInt(val);
 }
+
+/**
+ * Gets the sum of the values from a single column.
+ * @param {int} column - The column. 0 for hours, 1 for minutes, 2 for seconds.
+ * @returns {int} - The sum of all the columns.
+ */
+function getColumnSum(column) {
+
+    const numOfRows = $('#inputForm').children().length - 1;
+
+    var sum = 0;
+    for (var i = 0; i < numOfRows; i++) {
+        sum += getValue(column, i);
+    }
+
+    return sum;
+}
