@@ -1,5 +1,5 @@
 # Time Calculator
-A utility that enables you to add hours, minutes, and seconds together to get a total time. This project is part of [Bootle Tools](bootletools.com) and is free for all users of the internet.
+A utility that enables you to add hours, minutes, and seconds together to get a total time. This project is part of [Bootle Tools](https://bootletools.com) and is free for all users of the internet.
 
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/47395245/136075514-4aacb3d7-e77f-42a8-bf54-766d9d7f1665.png">
 
