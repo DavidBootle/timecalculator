@@ -9,7 +9,7 @@ You can access this project at [timecalc.bootletools.com](https://timecalc.bootl
 ## Credit
 This project was created and programmed by David Bootle ([TheWeirdSquid](https://github.com/TheWeirdSquid)).
 
-The icon for this project was created by David Bootle.
+The icon for this project was created by David Bootle and made browser ready using [realfavicongenerator.net](https://realfavicongenerator.net).
 
 The project was created using HTML, CSS, and Javascript and makes use of the following tools and frameworks:
 - [JQuery](https://jquery.com)
